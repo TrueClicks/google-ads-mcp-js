@@ -1,0 +1,33 @@
+{
+  "name": "@trueclicks/mcpserver.nojejs",
+  "version": "0.1.0",
+  "description": "MCP server for using Redis",
+  "license": "MIT",
+  "author": "TrueClicks",
+  "homepage": "https://https://www.trueclicks.com",
+  "bugs": {
+    "url": "https://github.com/TrueClicks"
+  },
+  "type": "module",
+  "bin": {
+    "npc-gaql-server": "build/index.js"
+  },
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "build": "tsc && shx chmod +x build/*.js",
+    "prepare": "npm run build",
+    "watch": "tsc --watch"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.8.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "typescript": "^5.8.2",
+    "shx": "^0.4.0"
+  },
+  "main": "index.js"
+}
