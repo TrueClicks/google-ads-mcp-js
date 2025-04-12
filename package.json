@@ -4,7 +4,7 @@
   "description": "MCP server for using Redis",
   "license": "MIT",
   "author": "TrueClicks",
-  "homepage": "https://https://www.trueclicks.com",
+  "homepage": "https://www.trueclicks.com",
   "bugs": {
     "url": "https://github.com/TrueClicks"
   },
@@ -16,9 +16,9 @@
     "build"
   ],
   "scripts": {
-    "build": "tsc && shx chmod +x build/*.js",
+    "build": "npx tsc && npx shx chmod +x build/*.js",
     "prepare": "npm run build",
-    "watch": "tsc --watch"
+    "watch": "npx tsc --watch"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.8.0",
