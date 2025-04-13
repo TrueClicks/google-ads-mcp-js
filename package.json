@@ -10,7 +10,7 @@
   },
   "type": "module",
   "bin": {
-    "npc-gaql-server": "build/index.js"
+    "mcpserver-nojejs": "build/index.js"
   },
   "files": [
     "build"
