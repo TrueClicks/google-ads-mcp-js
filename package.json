@@ -4,6 +4,10 @@
   "description": "Gogle Ads MCP by TrueClicks enables your GPT (like Claude) to securely access and query your Google Ads account data via GAQL.app.",
   "license": "MIT",
   "author": "TrueClicks",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TrueClicks/google-ads-mcp-js.git"
+  },
   "homepage": "https://www.trueclicks.com",
   "bugs": {
     "url": "https://github.com/TrueClicks/google-ads-mcp-js"
