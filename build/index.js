@@ -4,11 +4,15 @@ import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
 import { z } from "zod";
 import { GaqlClient } from "./client/gaql-client.js";
 // CLI token parsing
+console.error("Process argv:", process.argv);
 const tokenArg = process.argv.find(arg => arg.startsWith("--token="));
 const token = tokenArg?.substring("--token=".length);
 if (!token) {
-    console.error("Error: Missing --token argument.");
+    console.error("❌ Error: Missing --token argument.");
     process.exit(1);
+}
+else {
+    console.error("✅ Parsed token.");
 }
 const gaqlClient = new GaqlClient(token);
 const server = new McpServer({
@@ -17,6 +21,7 @@ const server = new McpServer({
 });
 // Tool: get-accounts
 server.tool("get-accounts", "Gets Google Ads accounts.", async () => {
+    console.error("🛠 get-accounts called");
     try {
         const accounts = await gaqlClient.getAccounts();
         return {
@@ -27,6 +32,7 @@ server.tool("get-accounts", "Gets Google Ads accounts.", async () => {
         };
     }
     catch (err) {
+        console.error("❌ Error in get-accounts:", err);
         return {
             content: [{
                     type: "text",
@@ -42,6 +48,7 @@ server.tool("execute-gaql-query", "Executes a GAQL query and returns the result 
     loginCustomerId: z.number().describe("Login Customer ID"),
     reportAggregation: z.string().describe("Report aggregation (for Microsoft Advertising only)")
 }, async (args) => {
+    console.error("🛠 execute-gaql-query called with:", args);
     try {
         const result = await gaqlClient.executeGaqlQuery(args);
         return {
@@ -52,6 +59,7 @@ server.tool("execute-gaql-query", "Executes a GAQL query and returns the result 
         };
     }
     catch (err) {
+        console.error("❌ Error in execute-gaql-query:", err);
         return {
             content: [{
                     type: "text",
@@ -62,11 +70,12 @@ server.tool("execute-gaql-query", "Executes a GAQL query and returns the result 
 });
 // Start server
 async function main() {
+    console.error("🚀 Connecting to MCP server...");
     const transport = new StdioServerTransport();
     await server.connect(transport);
-    console.error("MCP server is running...");
+    console.error("✅ MCP server is running.");
 }
 main().catch((err) => {
-    console.error("Fatal:", err);
+    console.error("🔥 Fatal error in main():", err);
     process.exit(1);
 });

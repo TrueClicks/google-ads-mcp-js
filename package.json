@@ -1,17 +1,16 @@
 {
-  "name": "@trueclicks/mcpserver.nojejs",
-  "version": "0.2.3",
-  "description": "Google Ads MCP by TrueClicks enables your GPT (like Claude) to securely access and query your Google Ads account data via GAQL.app.",
+  "name": "@trueclicks/google-ads-mcp-js",
+  "version": "0.3.4",
+  "description": "Gogle Ads MCP by TrueClicks enables your GPT (like Claude) to securely access and query your Google Ads account data via GAQL.app.",
   "license": "MIT",
   "author": "TrueClicks",
   "homepage": "https://www.trueclicks.com",
   "bugs": {
-    "url": "https://github.com/TrueClicks"
+    "url": "https://github.com/TrueClicks/google-ads-mcp-js"
   },
   "type": "module",
   "bin": {
-    "mcpserver-nojejs": "build/index.js",
-    "@trueclicks/mcpserver.nojejs": "build/index.js"
+    "google-ads-mcp-js": "build/index.js"
   },
   "files": [
     "build"

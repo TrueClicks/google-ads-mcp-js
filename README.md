@@ -31,9 +31,10 @@ To use this tool in [Claude](https://www.anthropic.com/index/introducing-model-c
 {
     "mcpServers": {
         "gads": {
-            "command": "node",
+            "command": "npx",
             "args": [
-                "C:/MCPServer.NojeJS/build/index.js",
+                "-y",
+                "@trueclicks/google-ads-mcp-js",
                 "--token=YOUR_BASE64_ENCODED_TOKEN"
             ]
         }

@@ -5,12 +5,15 @@ import { z } from "zod";
 import { GaqlClient, GaqlQueryRequest } from "./client/gaql-client.js";
 
 // CLI token parsing
+console.error("Process argv:", process.argv);
 const tokenArg = process.argv.find(arg => arg.startsWith("--token="));
 const token = tokenArg?.substring("--token=".length);
 
 if (!token) {
-    console.error("Error: Missing --token argument.");
+    console.error("❌ Error: Missing --token argument.");
     process.exit(1);
+} else {
+    console.error("✅ Parsed token.");
 }
 
 const gaqlClient = new GaqlClient(token);
@@ -25,6 +28,7 @@ server.tool(
     "get-accounts",
     "Gets Google Ads accounts.",
     async () => {
+        console.error("🛠 get-accounts called");
         try {
             const accounts = await gaqlClient.getAccounts();
             return {
@@ -34,6 +38,8 @@ server.tool(
                 }]
             };
         } catch (err: any) {
+            console.error("❌ Error in get-accounts:", err);
+
             return {
                 content: [{
                     type: "text",
@@ -46,43 +52,47 @@ server.tool(
 
 // Tool: execute-gaql-query
 server.tool(
-  "execute-gaql-query",
-  "Executes a GAQL query and returns the result as a formatted JSON string.",
-  {
-      query: z.string().describe("GAQL query"),
-      customerId: z.number().describe("Customer ID"),
-      loginCustomerId: z.number().describe("Login Customer ID"),
-      reportAggregation: z.string().describe("Report aggregation (for Microsoft Advertising only)")
-  },
-  async (args: GaqlQueryRequest) => {
-      try {
-          const result = await gaqlClient.executeGaqlQuery(args);
+    "execute-gaql-query",
+    "Executes a GAQL query and returns the result as a formatted JSON string.",
+    {
+        query: z.string().describe("GAQL query"),
+        customerId: z.number().describe("Customer ID"),
+        loginCustomerId: z.number().describe("Login Customer ID"),
+        reportAggregation: z.string().describe("Report aggregation (for Microsoft Advertising only)")
+    },
+    async (args: GaqlQueryRequest) => {
+        console.error("🛠 execute-gaql-query called with:", args);
+        try {
+            const result = await gaqlClient.executeGaqlQuery(args);
 
-          return {
-              content: [{
-                  type: "text",
-                  text: `Query result:\n${result}`
-              }]
-          };
-      } catch (err: any) {
-          return {
-              content: [{
-                  type: "text",
-                  text: `Failed to execute query: ${err.message}`
-              }]
-          };
-      }
-  }
+            return {
+                content: [{
+                    type: "text",
+                    text: `Query result:\n${result}`
+                }]
+            };
+        } catch (err: any) {
+            console.error("❌ Error in execute-gaql-query:", err);
+
+            return {
+                content: [{
+                    type: "text",
+                    text: `Failed to execute query: ${err.message}`
+                }]
+            };
+        }
+    }
 );
 
 // Start server
 async function main() {
+    console.error("🚀 Connecting to MCP server...");
     const transport = new StdioServerTransport();
     await server.connect(transport);
-    console.error("MCP server is running...");
+    console.error("✅ MCP server is running.");
 }
 
 main().catch((err) => {
-    console.error("Fatal:", err);
+    console.error("🔥 Fatal error in main():", err);
     process.exit(1);
 });
