@@ -19,10 +19,6 @@ No build step is required — the repository already includes the compiled outpu
 
 ---
 
-## Build (optional)
-
-npm run build
-
 ## Claude Configuration
 
 To use this tool in [Claude](https://www.anthropic.com/index/introducing-model-context), add the following to your configuration:
