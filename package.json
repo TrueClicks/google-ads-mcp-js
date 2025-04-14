@@ -1,6 +1,6 @@
 {
   "name": "@trueclicks/google-ads-mcp-js",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "description": "Gogle Ads MCP by TrueClicks enables your GPT (like Claude) to securely access and query your Google Ads account data via GAQL.app.",
   "license": "MIT",
   "author": "TrueClicks",
