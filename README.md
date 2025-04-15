@@ -35,7 +35,7 @@ Ensure you have Node.js installed on your system.
 winget install nodejs
 ```
 
-- On macOS, download and install Node.js from [https://nodejs.org](https://nodejs.org).
+- On macOS, download and install Node.js from [https://nodejs.org](https://nodejs.org). If you need help, please refer to the screenshots at the end of this document. 
 
 ### 2. Get Your GPT Token
 
