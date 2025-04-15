@@ -1,10 +1,9 @@
 
 # Google Ads MCP (Node.js) - by TrueClicks
 
-Google Ads MCP by TrueClicks enables your AI (like Claude) to securely access and query your Google Ads account data via [GAQL.app](https://gaql.app). It supports both Windows and macOS, including Intel and ARM-based systems.
+Google Ads MCP by TrueClicks enables your AI (like Claude) to securely access and query your Google Ads account data. It supports both Windows and macOS, including Intel and ARM-based systems. It connects AIs to Google Ads using [GAQL.app] as a backend.
 
-This is an *unofficial* Google Ads MCP integration - and as of now, **no official version exists**. It supports both Windows and macOS and connects AIs to Google Ads using [GAQL.app](https://gaql.app) as a backend.
-
+This is an *unofficial* Google Ads MCP integration - and as of now, **no official version exists**.
 ---
 
 ## ✅ Why Use This MCP?
