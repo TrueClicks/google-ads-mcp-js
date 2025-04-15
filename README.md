@@ -112,22 +112,22 @@ You’re now ready to use Claude AI to query your Google Ads accounts.
 ## 📸 Setup Screenshots (macOS)
 
 1. **Node.js download:** Screenshot of downloading Node.js from the official site.
-![Node.js download](https://github.com/TrueClicks/google-ads-mcp-dotnet/blob/main/assets/images/osx-1.png)
+![Node.js download](https://github.com/TrueClicks/google-ads-mcp-js/blob/main/assets/images/osx-1.png)
 
 2. **Claude Developer section:** Screenshot of accessing the Developer section in Claude.
-![Claude developer section](https://github.com/TrueClicks/google-ads-mcp-dotnet/blob/main/assets/images/osx-2.png)
+![Claude developer section](https://github.com/TrueClicks/google-ads-mcp-js/blob/main/assets/images/osx-2.png)
 
 3. **Open configuration file for editing:** Screenshot showing how to open `claude_desktop_config.json`.
-![Claude config file](https://github.com/TrueClicks/google-ads-mcp-dotnet/blob/main/assets/images/osx-3.png)
+![Claude config file](https://github.com/TrueClicks/google-ads-mcp-js/blob/main/assets/images/osx-3.png)
 
 4. **Editing configuration JSON:** Screenshot of the JSON configuration being edited.
-![Content in claude_desktop_config.json](https://github.com/TrueClicks/google-ads-mcp-dotnet/blob/main/assets/images/osx-4.png)
+![Content in claude_desktop_config.json](https://github.com/TrueClicks/google-ads-mcp-js/blob/main/assets/images/osx-4.png)
 
 5. **Restarting Claude:** Screenshot showing how to quit and restart Claude from the top-right corner.
-![How to hard restart Claude](https://github.com/TrueClicks/google-ads-mcp-dotnet/blob/main/assets/images/osx-5.png)
+![How to hard restart Claude](https://github.com/TrueClicks/google-ads-mcp-js/blob/main/assets/images/osx-5.png)
 
 6. **Example prompt:** Screenshot showing an example prompt using Claude with Google Ads integration.
-![Example prompting Google Ads with Claude](https://github.com/TrueClicks/google-ads-mcp-dotnet/blob/main/assets/images/osx-6.png)
+![Example prompting Google Ads with Claude](https://github.com/TrueClicks/google-ads-mcp-js/blob/main/assets/images/osx-6.png)
 
 ---
 
